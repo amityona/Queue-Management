@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nestjs-backend
+    env: node
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm run start:prod
+    plan: free
+    branches:
+      - main
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: '10000'
