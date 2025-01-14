@@ -2,7 +2,7 @@ services:
   - type: web
     name: nestjs-backend
     env: node
-    buildCommand: cd backend && npm install -g @nestjs/cli && npm install && nest build
+    buildCommand: cd backend && npm install -g @nestjs/cli && npm install --include=dev && nest build
     startCommand: cd backend && node dist/main
     plan: free
     autoDeploy: true
